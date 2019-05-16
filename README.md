@@ -1,7 +1,7 @@
 # Exception-handler-decorator
 Useful decorator to handle exceptions with logging support and additional handlers if exception occurs. 
 
-Examples:
+Example 1:
 
 ```python
 def handler_function(need_error, result):
@@ -18,7 +18,7 @@ def testing_func(need_error, result):
 testing_func(True, 1)
 ```
 
-Output:
+Log output:
 
 ```
 [EMSG: TEST]
@@ -34,6 +34,8 @@ Output:
 ]
 ```
 
+Example 2:
+
 ```python
 @exception_handler()
 def only_err():
@@ -42,7 +44,7 @@ def only_err():
 only_err()
 ```
 
-Output:
+Log output:
 
 ```
 [EMSG: UNSET]
@@ -58,6 +60,8 @@ Output:
 ]
 ```
 
+Example 3:
+
 ```python
 @exception_handler(error_message='TEST',
                    additional_handler=handler_function,
@@ -70,6 +74,8 @@ def testing_func_one(need_error, result):
 
 testing_func_one(False, 1)
 ```
+
+Log output:
 
 ```
 [EMSG: TEST]
